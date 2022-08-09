@@ -128,6 +128,11 @@ function makeCommand (): Command {
       'package.json',
       '"package.json" file in current working directory.'
     )
+  ).option(
+    '-v',
+    'Each time this flag is added the verbosity is increased',
+    (_, previous) => previous + 1,
+    0
   ).version(
     // that is supposed to be the last option in the list on the help page.
     /* eslint-disable-next-line @typescript-eslint/no-var-requires */
